@@ -1,0 +1,20 @@
+{
+  "name": "urfs-server",
+  "version": "0.0.1",
+  "description": "Server for Udemy react fs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "udemy",
+    "react",
+    "fullstack",
+    "node"
+  ],
+  "author": "Fabio M. Albertin <fabio@albertin.co.uk> (http://ifab.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
