@@ -4,4 +4,4 @@
 *.rsa
 node_modules
 */public
-keys.js
+dev.js
