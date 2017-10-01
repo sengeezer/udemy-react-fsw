@@ -21,6 +21,7 @@
   "author": "Fabio M. Albertin <fabio@albertin.co.uk> (http://ifab.io/)",
   "license": "MIT",
   "dependencies": {
+    "cookie-session": "^1.3.2",
     "express": "^4.15.4",
     "mongoose": "^4.11.13",
     "nodemon": "^1.12.1",
