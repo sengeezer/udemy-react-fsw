@@ -21,17 +21,17 @@ passport.use(new GoogleStrategy({
   callbackURL: '/auth/google/callback',
   // allow for heroku proxy
   proxy: true,
-}, (accessToken, refreshToken, profile, done) => {
+}, async (accessToken, refreshToken, profile, done) => {
   // refresh (access) token
-  User.findOne({ googleID: profile.id }).then((existingUser) => {
-    if (existingUser) {
-      // status, record
-      done(null, existingUser);
-    } else {
-      new User({ googleID: profile.id }).save().then((user) => {
-        done(null, user);
-      });
-    }
-  });
+  const existingUser = await User.findOne({ googleID: profile.id });
+
+  if (existingUser) {
+    // status, record
+    return done(null, existingUser);
+  }
+
+  const user = await new User({ googleID: profile.id }).save();
+
+  done(null, user);
 }),
 );
